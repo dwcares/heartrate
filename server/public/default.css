@@ -1,0 +1,26 @@
+body {
+	overflow-y: auto;
+	
+	display: flex;
+	flex-flow: column;
+	align-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+#heart {
+	font-size: 60pt;
+ 	transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+#label{ 
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.stateOne {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+.stateTwo {
+    opacity: .5;
+    transform: scale(1.9, 1.9);
+}
