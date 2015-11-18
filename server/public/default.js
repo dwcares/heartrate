@@ -6,9 +6,9 @@ window.onload = function () {
        var heart =  document.getElementById("heart");
        
        socket.on('rate', function (msg) {
-          
+           
            var pulse = 60/msg/2
-           document.getElementById("label").innerText = msg;
+           document.getElementById("label").innerText = msg + " bpm";
            
            heart.style.transition = "transform " + pulse + "s ease-in-out, opacity " + pulse + "s ease-in-out"
       });
