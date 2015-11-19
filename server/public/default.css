@@ -14,7 +14,8 @@ body {
  	transition: transform .5s ease-in-out, opacity .5s ease-in-out;
 }
 #label{ 
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin-top: 20px;
+	font-family: 'Segoe UI', Helvetica, Tahoma, Geneva, Verdana, sans-serif;
 	color: grey;
 }
 .stateOne {
