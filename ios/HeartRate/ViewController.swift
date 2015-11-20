@@ -16,8 +16,16 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        initSocket();
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Mark - Init
+    func initSocket() {
+
         socket.on("connect") {data, ack in
             self.labelStatusServer.text = "Connected";
         }
@@ -29,20 +37,7 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
         
         socket.connect()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    // Mark - Init
-    func initBand() {
-        
-    }
-    
-    func initSocket() {
-        
-    }
 
     // Mark - Heart rate helpers
     func getBandHeartRateConsent(completion: (result: Bool) -> Void) {
@@ -64,7 +59,6 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
         }
     }
     
-    
     func reportHeartRate(heartRateData: MSBSensorHeartRateData!, error: NSError!) {
         self.labelStatusHeartRate.text = NSString(format: "%0.2d", heartRateData.heartRate) as String
         
@@ -78,9 +72,7 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
         }
     }
     
-    
     //MARK: UI Actions
-    
     @IBAction func buttonStartRead(sender: UIButton) {
         MSBClientManager.sharedManager().delegate = self
         if let client = MSBClientManager.sharedManager().attachedClients().first as? MSBClient {
@@ -92,9 +84,7 @@ class ViewController: UIViewController, MSBClientManagerDelegate {
         }
     }
     
-    
     // Mark - MSBand Client Manager Delegates
-    
     func clientManager(clientManager: MSBClientManager!, clientDidConnect client: MSBClient!) {
          self.labelStatusBand.text =  "Connected"
         
