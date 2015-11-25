@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="HeartRate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HeartRate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Margin="0,20,0,0" FontSize="32" HorizontalAlignment="Center" TextAlignment="Center">Heart Rate</TextBlock>
+        <StackPanel Margin="40,80,0,0">
+            <TextBlock FontSize="20">Server status</TextBlock>
+            <TextBlock Text="{Binding ServerStatus}" FontSize="16" Foreground="#00BCF2"></TextBlock>
+            <TextBlock FontSize="20" Margin="0,20,0,0">Band status</TextBlock>
+            <TextBlock Text="{Binding BandStatus}" FontSize="16" Foreground="#00BCF2"></TextBlock>
+            <TextBlock FontSize="20" Margin="0,20,0,0">Sensor status</TextBlock>
+            <TextBlock Text="{Binding HeartRateSensorStatus}" FontSize="16" Foreground="#00BCF2"></TextBlock>
+            <TextBlock FontSize="20" Margin="0,20,0,0">Heart rate</TextBlock>
+            <TextBlock Text="{Binding HeartRate}" FontSize="16" Foreground="#00BCF2"></TextBlock>
+            <Button Margin="0,40,0,0" Click="Button_Click">Connect</Button>
+        </StackPanel>
+    </Grid>
+</Page>
